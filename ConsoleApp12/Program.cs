@@ -1,6 +1,6 @@
-﻿using System;
+﻿//Земзем Амин 23ИС
+using System;
 using System.Collections.Generic;
-using System.Linq;
 
 class FootballTeam
 {
@@ -46,23 +46,6 @@ class Program
         };
 
         Show("Начальный список", teams);
-
-        var newTeam = new FootballTeam(6, "Звезда", "Тетерин", 14, 9);
-        int pos = teams.FindIndex(t => t.Название == "Комета");
-        if (pos >= 0) teams.Insert(pos, newTeam);
-        Show("После вставки Звезда перед Кометой", teams);
-
-        if (teams.Count >= 2) teams.RemoveAt(1);
-        Show("После удаления ID=2", teams);
-
-        var winners = teams.Where(t => t.Очки >= 18).ToList();
-        Show("Только команды с очками >= 18", winners);
-
-        var byName = teams.OrderBy(t => t.Название).ToList();
-        Show("Сортировка по названию", byName);
-
-        var byPlace = teams.OrderBy(t => t.Место).ToList();
-        Show("Сортировка по месту", byPlace);
 
         Console.ReadKey();
     }
