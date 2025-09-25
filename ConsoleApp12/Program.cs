@@ -47,6 +47,14 @@ class Program
 
         Show("Начальный список", teams);
 
+        var newTeam = new FootballTeam(6, "Звезда", "Тетерин", 14, 9);
+        int pos = teams.FindIndex(t => t.Название == "Комета");
+        if (pos >= 0) teams.Insert(pos, newTeam);
+        Show("После вставки Звезда перед Кометой", teams);
+
+        if (teams.Count >= 2) teams.RemoveAt(1);
+        Show("После удаления ID=2", teams);
+
         Console.ReadKey();
     }
 }
